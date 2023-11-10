@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-auth-deployment
+spec:
+  replicas: 2  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: dev-auth
+  template:
+    metadata:
+      labels:
+        app: dev-auth
+    spec:
+      containers:
+        - name: dev-auth
+          image: nkmurugesan/dev-auth:0.1
+          ports:
+            - containerPort: 8080  # Adjust the port as needed
+

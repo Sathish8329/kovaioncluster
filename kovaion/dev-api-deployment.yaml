@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-api-deployment
+spec:
+  replicas: 2  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: dev-api
+  template:
+    metadata:
+      labels:
+        app: dev-api
+    spec:
+      containers:
+        - name: dev-api
+          image: nkmurugesan/dev-api:0.1
+          ports:
+            - containerPort: 8000  # Adjust the port as needed
+
