@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: 
+        image: sathish8329/backend:d2
         ports:
         - containerPort: 8000
 ---
@@ -31,3 +31,4 @@ spec:
       port: 8000
       targetPort: 8000
   type: NodePort
+
